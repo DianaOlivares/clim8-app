@@ -1,0 +1,292 @@
+/* Resets: to ensure we start with a clean slate */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%; /* This is required for flex to properly place app in the center of screen */
+}
+
+body{
+  align-items: center;
+  background-color: rgb(236, 227, 227);
+  display: flex;
+  font-family: 'Poppins', sans-serif;
+  font-size: 20px;
+  justify-content: center;
+}
+
+fieldset {
+  border: none;
+}
+
+/* Background gradient */
+@keyframes BackgroundGradient {
+  0% {background-position: 0% 50%;}
+  50% {background-position: 100% 50%;}
+  100% {background-position: 0% 50%;}
+}
+
+/* Clouds animation */
+#clouds{
+  bottom: -110px;
+	position: absolute;
+}
+.cloud {
+  background: #dadada;
+  height: 60px;
+  width: 200px;
+
+	border-radius: 200px;
+	-moz-border-radius: 200px;
+	-webkit-border-radius: 200px;
+
+	position: relative;
+}
+.cloud:before,
+.cloud:after {
+  background: #dadada;
+	content: '';
+  height: 80px;
+  left: 10px;
+	position: absolute;
+  top: -15px;
+	width: 100px;
+
+	border-radius: 100px;
+	-moz-border-radius: 100px;
+	-webkit-border-radius: 100px;
+
+  transform: rotate(30deg);
+	-webkit-transform: rotate(30deg);
+	-moz-transform: rotate(30deg);
+}
+.cloud:after {
+  height: 120px;
+  left: auto;
+  right: 15px;
+  top: -55px;
+	width: 120px;
+}
+
+.x1 {
+  opacity: 0.3;
+
+	-webkit-animation: moveclouds 15s linear infinite;
+	-moz-animation: moveclouds 15s linear infinite;
+	-o-animation: moveclouds 15s linear infinite;
+}
+/* variable speed, opacity, and position of clouds for realistic effect */
+.x2 {
+	left: 100px;
+  top: -50px;
+
+	-webkit-transform: scale(0.4);
+	-moz-transform: scale(0.4);
+	transform: scale(0.4);
+	opacity: 0.4; /* opacity proportional to the size */
+
+	/* Speed will also be proportional to the size and opacity */
+	/* More the speed. Less the time in 's' = seconds */
+	-webkit-animation: moveclouds 25s linear infinite;
+	-moz-animation: moveclouds 25s linear infinite;
+	-o-animation: moveclouds 25s linear infinite;
+}
+.x3 {
+	left: -150px;
+  top: -100px;
+
+	-webkit-transform: scale(0.75);
+	-moz-transform: scale(0.75);
+	transform: scale(0.75);
+	opacity: 0.75; /* opacity proportional to the size */
+
+	-webkit-animation: moveclouds 20s linear infinite;
+	-moz-animation: moveclouds 20s linear infinite;
+	-o-animation: moveclouds 20s linear infinite;
+}
+.x4 {
+	left: 370px;
+  top: -150px;
+
+	-webkit-transform: scale(0.55);
+	-moz-transform: scale(0.55);
+	transform: scale(0.55);
+	opacity: 0.55; /*opacity proportional to the size*/
+
+	-webkit-animation: moveclouds 18s linear infinite;
+	-moz-animation: moveclouds 18s linear infinite;
+	-o-animation: moveclouds 18s linear infinite;
+}
+.x5 {
+	left: -50px;
+  top: -90px;
+
+	-webkit-transform: scale(0.7);
+	-moz-transform: scale(0.7);
+	transform: scale(0.7);
+	opacity: 0.7; /* opacity proportional to the size */
+
+	-webkit-animation: moveclouds 20s linear infinite;
+	-moz-animation: moveclouds 20s linear infinite;
+	-o-animation: moveclouds 20s linear infinite;
+}
+
+@-webkit-keyframes moveclouds {
+	0% {margin-left: 400px;}
+	100% {margin-left: -400px;}
+}
+@-moz-keyframes moveclouds {
+	0% {margin-left: 400px;}
+	100% {margin-left: -400px;}
+}
+@-o-keyframes moveclouds {
+	0% {margin-left: 400px;}
+	100% {margin-left: -400px;}
+}
+
+
+/* iPhone and controls */
+.silent-button {
+  background-color: #a1a6ce;
+  height: 22px;
+  left: -8px;
+  position: absolute;
+  width: 6px;
+  top: 90px;
+}
+.vol-up-button {
+  background-color: #a1a6ce;
+  height: 32px;
+  left: -8px;
+  position: absolute;
+  top: 145px;
+  width: 6px;
+}
+.vol-down-button {
+  background-color: #a1a6ce;
+  height: 32px;
+  left: -8px;
+  position: absolute;
+  top: 192px;
+  width: 6px;
+}
+.camera {
+  background-color: black;
+  border-radius: 10px;
+  height: 30px;
+  left: 110px;
+  position: absolute;
+  top: 30px;
+  width: 10px;
+}
+.receiver {
+  background-color: #757575;
+  border-radius: 10px;
+  height: 30px;
+  left: 140px;
+  position: absolute;
+  top: 30px;
+  width: 60px;
+}
+.on-off-button {
+  background-color: #a1a6ce;
+  height: 45px;
+  right: -8px;
+  position: absolute;
+  top: 140px;
+  width: 6px;
+}
+.home-button {
+  background-color: #988f8f;
+  border: 3px solid #a1a6ce;
+  border-radius: 8px;
+  height: 30px;
+  left: 110px;
+  position: absolute;
+  bottom: 8px;
+  width: 100px;
+}
+
+.mobile-phone {
+  background-color: #988f8f;
+  padding: 80px 15px 54px 15px;
+  border-radius: 15px;
+  border: 5px solid #a1a6ce;
+  position: relative;
+}
+
+.phone-screen {
+  animation: BackgroundGradient 20s ease infinite;
+  background: linear-gradient(300deg, #ff6036, #fff68e, #ebf9ff, #0477ea);
+  background-size: 400% 400%;
+  border: 1px solid #e4e4e4;
+  border-radius: 15px;
+  height: 420px;
+  overflow: hidden;
+  padding: 25px 20px;
+  position: relative;
+  text-align: center;
+  width: 260px;
+}
+
+/* Content */
+.app-name {
+  font-family: 'Titan One', cursive;
+  color: #a3ceb7;
+}
+
+.weather-form {
+  margin-top: 20px;
+}
+
+.weather {
+  font-size: 15px;
+  text-align: left;
+}
+
+.weather-info-title {
+  font-weight: bold;
+}
+
+#city-selector {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 22px;
+  height: 40px;
+  margin: 8px 0;
+  width: 100%;
+}
+
+#city-selector:hover {
+  background-color: #eee;
+}
+
+.form-label {
+  display: block;
+}
+
+.city-location,
+.condition,
+.temperature {
+  margin-bottom: 10px;
+}
+
+.submit-btn {
+  background-color: #a3ceb7;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  cursor: pointer;
+  font-size: 22px;
+  margin: 10px 0 22px 0;
+  padding: 14px 20px;
+  width: 100%;
+}
+
+.submit-btn:hover {
+  background-color: #a3ceb7;
+}
